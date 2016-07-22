@@ -1,5 +1,8 @@
 package com.twtr.rule.api;
 
+import java.util.Arrays;
+import java.util.List;
+
 import com.twtr.rule.core.AndRule;
 import com.twtr.rule.core.AnyRule;
 import com.twtr.rule.core.IfElseRule;
@@ -24,21 +27,15 @@ public abstract class Rule {
 	}
 
 	public Rule any( Rule... rules ){
-		Rule[] rs = new Rule[rules.length + 1];
-		rs[0] = this;
-		for (int i = 0; i < rules.length; i++) {
-			rs[i + 1] = rules[i];
-		}
-		return new AnyRule( rs );
+		List<Rule> rule_list = Arrays.asList( rules );
+		rule_list.add( 0, this );
+		return new AnyRule( rule_list );
 	}
 
 	public Rule and( Rule... rules ){
-		Rule[] rs = new Rule[rules.length + 1];
-		rs[0] = this;
-		for (int i = 0; i < rules.length; i++) {
-			rs[i + 1] = rules[i];
-		}
-		return new AndRule( rs );
+		List<Rule> rule_list = Arrays.asList( rules );
+		rule_list.add( 0, this );
+		return new AndRule( rule_list );
 	}
 
 	public Rule or( Rule rule ){

@@ -20,6 +20,11 @@ public class AndRule extends Rule {
 		this.rules = Arrays.asList( rules );
 	}
 
+	public AndRule( List<Rule> rules ) {
+		super();
+		this.rules = rules;
+	}
+
 	@Override
 	public boolean apply( Object context ){
 		for (Rule rule : rules) {

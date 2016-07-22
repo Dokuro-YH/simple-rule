@@ -20,6 +20,11 @@ public class AnyRule extends Rule {
 		this.rules = Arrays.asList( rules );
 	}
 
+	public AnyRule( List<Rule> rules ) {
+		super();
+		this.rules = rules;
+	}
+
 	@Override
 	public boolean apply( Object context ){
 		for (Rule rule : rules) {
