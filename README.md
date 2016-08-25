@@ -44,13 +44,13 @@ public class TestRuleEngine {
 		Member member3 = new Member( 3, DateUtils.addDays( new Date(), -1 ) );// 初始化铂金会员，会员等级3，生日不是今天
 		// 运行规则引擎
 		engine.run( member );
-		System.out.println( "其他会员: " + member );
+		System.out.println( "其他会员: " + member ); // 其他会员: Member [level=0, birthday=Thu Aug 25 23:38:40 CST 2016, discount=0.9]
 		engine.run( member1 );
-		System.out.println( "银卡会员: " + member1 );
+		System.out.println( "银卡会员: " + member1 );// 银卡会员: Member [level=1, birthday=Thu Aug 25 23:38:40 CST 2016, discount=0.81]
 		engine.run( member2 );
-		System.out.println( "金卡会员: " + member2 );
+		System.out.println( "金卡会员: " + member2 );// 金卡会员: Member [level=2, birthday=Wed Aug 24 23:38:40 CST 2016, discount=0.8]
 		engine.run( member3 );
-		System.out.println( "铂金会员: " + member3 );
+		System.out.println( "铂金会员: " + member3 );// 铂金会员: Member [level=3, birthday=Wed Aug 24 23:38:40 CST 2016, discount=0.6]
 	}
 }
 ```
